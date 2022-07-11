@@ -1,5 +1,5 @@
-# Upload & Read CSV file into MySQL Database in Spring Boot using Apache Commons CSV
-Project used for uploading and reading CSV file into MySQL database in Spring Boot using Apache Commons CSV.
+# Upload & Read csv file into MySQL db in using Apache Commons CSV
+Project used for uploading and reading csv file into MySQL database using Apache Commons CSV.
 
 ## Description
 
