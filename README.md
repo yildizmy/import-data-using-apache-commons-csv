@@ -1,4 +1,4 @@
-# Upload CSV into MySQL Using Apache Commons CSV
+# Upload CSV into MySQL using Apache Commons CSV
 Project used for uploading and reading csv file into MySQL database using Apache Commons CSV.
 
 ## Description
