@@ -24,6 +24,14 @@ Project used for uploading and reading csv file into MySQL database using Apache
 ```
 docker-compose up -d
 ```
+<br/>
+
+To set container name as mysql instead of the folder name where `docker-compose.yml` file is located, use the following command:
+
+```
+docker-compose -f docker-compose.yml -p "mysql" up
+```
+<br/>
 
 * Database connection url for DBeaver, etc.
 
@@ -37,9 +45,9 @@ jdbc:mysql://localhost:3306/employee-db
 
 * Postman requests:
 
+For file upload request, select form-data in the Body section and use "file" as key parameter
 ```
 http://localhost:8080/api/v1/employees/upload
-// in Postman select form-data in the Body section and use "file" as key parameter
 ```
 
 ```
