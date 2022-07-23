@@ -43,7 +43,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employees")
-    public ResponseEntity deleteAll() {
+    public ResponseEntity<String> deleteAll() {
         employeeService.deleteAll();
         return ResponseEntity.ok(SUCCESSFULLY_DELETED);
     }
