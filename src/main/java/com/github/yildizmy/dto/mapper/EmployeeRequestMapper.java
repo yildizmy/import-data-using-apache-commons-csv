@@ -5,6 +5,8 @@ import com.github.yildizmy.model.Employee;
 
 public class EmployeeRequestMapper {
 
+    // TODO: JMapper or MapStruct library might be used for mapping
+
     public static Employee mapToEntity(EmployeeRequest request) {
         return new Employee(
                 request.getId(),
