@@ -3,6 +3,8 @@ package com.github.yildizmy.exception;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,7 @@ import static com.github.yildizmy.common.Constants.*;
 
 @Slf4j(topic = "GLOBAL_EXCEPTION_HANDLER")
 @RestControllerAdvice
-// @Order(Ordered.LOWEST_PRECEDENCE)
+@Order(value = Ordered.LOWEST_PRECEDENCE)
 public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Value("${reflecting.trace:false}")
