@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import javax.validation.ConstraintViolationException;
 import java.util.Objects;
 
 import static com.github.yildizmy.common.Constants.*;
 
 @Slf4j(topic = "GLOBAL_EXCEPTION_HANDLER")
 @RestControllerAdvice
+// @Order(Ordered.LOWEST_PRECEDENCE)
 public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Value("${reflecting.trace:false}")
@@ -44,13 +44,6 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleNoSuchElementFoundException(NoSuchElementFoundException ex, WebRequest request) {
         log.error(FAILED_TO_FIND_ELEMENT, ex);
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, request);
-    }
-
-    @ExceptionHandler(ConstraintViolationException.class)
-    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex, WebRequest request) {
-        log.error(INVALID_FILE_TYPE, ex);
-        return buildErrorResponse(ex, HttpStatus.UNPROCESSABLE_ENTITY, request);
     }
 
     @ExceptionHandler(Exception.class)
