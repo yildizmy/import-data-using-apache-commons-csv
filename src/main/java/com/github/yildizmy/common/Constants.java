@@ -18,4 +18,5 @@ public class Constants {
     public static final String NO_RECORD="File does not contain any record";
     public static final String FAILED_TO_PARSE="Failed to parse csv file: ";
     public static final String NO_ITEM_FOUND="Item with given email not found";
+    public static final String MAX_UPLOAD_SIZE_EXCEEDED="Maximum upload size exceeded";
 }
