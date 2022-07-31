@@ -12,11 +12,10 @@ public class Constants {
     public static final String SUCCESSFULLY_UPLOADED="File uploaded successfully: ";
     public static final String SUCCESSFULLY_DELETED="Successfully deleted";
     public static final String VALIDATION_ERROR="Validation error. Check 'errors' field for details";
-    public static final String FAILED_TO_FIND_ELEMENT="Failed to find the requested element";
+    public static final String ENTITY_NOT_FOUND="Item not found";
     public static final String INVALID_FILE_TYPE="Invalid file type";
     public static final String UNKNOWN_ERROR="Unknown error occurred";
     public static final String NO_RECORD="File does not contain any record";
     public static final String FAILED_TO_PARSE="Failed to parse csv file: ";
-    public static final String NO_ITEM_FOUND="Item with given email not found";
     public static final String MAX_UPLOAD_SIZE_EXCEEDED="Maximum upload size exceeded";
 }

@@ -42,17 +42,33 @@ public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.unprocessableEntity().body(errorResponse);
     }
 
-    @ExceptionHandler(NoSuchElementFoundException.class)
+    /**
+     * Handles javax.persistence.EntityNotFoundException
+     */
+    @ExceptionHandler(javax.persistence.EntityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleNoSuchElementFoundException(NoSuchElementFoundException ex, WebRequest request) {
-        log.error(FAILED_TO_FIND_ELEMENT, ex);
+    public ResponseEntity<Object> handleEntityNotFoundException(javax.persistence.EntityNotFoundException ex,
+                                                                WebRequest request) {
+        log.error(ENTITY_NOT_FOUND, ex);
+        return buildErrorResponse(ex, ENTITY_NOT_FOUND, HttpStatus.NOT_FOUND, request);
+    }
+
+    /**
+     * Handles com.github.yildizmy.exception.EntityNotFoundException
+     * Created to encapsulate errors with more detail than javax.persistence.EntityNotFoundException
+     */
+    @ExceptionHandler(com.github.yildizmy.exception.EntityNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ResponseEntity<Object> handleEntityNotFoundException(com.github.yildizmy.exception.EntityNotFoundException ex,
+                                                                WebRequest request) {
+        log.error(ENTITY_NOT_FOUND, ex);
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, request);
     }
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     @ResponseStatus(HttpStatus.PAYLOAD_TOO_LARGE)
     public ResponseEntity<Object> handleMaxUploadSizeExceededException(MaxUploadSizeExceededException ex, WebRequest request) {
-        log.error(FAILED_TO_FIND_ELEMENT, ex);
+        log.error(MAX_UPLOAD_SIZE_EXCEEDED, ex);
         return buildErrorResponse(ex, MAX_UPLOAD_SIZE_EXCEEDED, HttpStatus.PAYLOAD_TOO_LARGE, request);
     }
 
