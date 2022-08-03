@@ -6,7 +6,7 @@ import com.github.yildizmy.exception.EntityNotFoundException;
 import com.github.yildizmy.model.Employee;
 import com.github.yildizmy.repository.EmployeeRepository;
 import com.github.yildizmy.util.CsvHelper;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,7 +17,7 @@ import static com.github.yildizmy.common.Constants.ENTITY_NOT_FOUND;
 import static com.github.yildizmy.common.Constants.NO_RECORD;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
