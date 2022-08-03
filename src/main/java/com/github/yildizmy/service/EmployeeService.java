@@ -23,8 +23,8 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     public List<EmployeeDto> findAll() {
-        return employeeRepository.findAll()
-                .stream().map(EmployeeDto::new)
+        return employeeRepository.findAll().stream()
+                .map(EmployeeDto::new)
                 .toList();
     }
 
@@ -39,7 +39,9 @@ public class EmployeeService {
         List<Employee> employees = CsvHelper.csvToEmployees(file.getInputStream()).stream()
                 .map(EmployeeRequestMapper::mapToEntity)
                 .toList();
-        if (employees.isEmpty()) { throw new EntityNotFoundException(NO_RECORD); }
+        if (employees.isEmpty()) {
+            throw new EntityNotFoundException(NO_RECORD);
+        }
         employeeRepository.saveAll(employees);
     }
 
