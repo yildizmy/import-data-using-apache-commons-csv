@@ -29,7 +29,7 @@ public class EmployeeService {
     }
 
     public EmployeeDto findByEmail(String email) {
-        return employeeRepository.findByEmail(email)
+        return employeeRepository.findBySimpleNaturalId(email)
                 .map(EmployeeDto::new)
                 .orElseThrow(() -> new EntityNotFoundException(ENTITY_NOT_FOUND));
     }

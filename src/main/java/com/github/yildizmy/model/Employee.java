@@ -31,7 +31,7 @@ public class Employee {
     private String name;
 
     @NaturalId
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, updatable = false, unique = true)
     private String email;
 
     private String country;
