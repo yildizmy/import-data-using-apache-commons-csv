@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.NaturalId;
+import org.hibernate.annotations.NaturalIdCache;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -15,6 +18,10 @@ import java.util.Objects;
 @AllArgsConstructor
 @Entity
 @Table(name = "employee")
+@org.hibernate.annotations.Cache(
+        usage = CacheConcurrencyStrategy.READ_WRITE
+)
+@NaturalIdCache
 public class Employee {
 
     @Id
@@ -22,8 +29,13 @@ public class Employee {
     private Long id;
 
     private String name;
+
+    @NaturalId
+    @Column(nullable = false, unique = true)
     private String email;
+
     private String country;
+
     private LocalDate birthDate;
 
     @Override
