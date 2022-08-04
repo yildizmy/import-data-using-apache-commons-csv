@@ -1,4 +1,4 @@
-package com.github.yildizmy.repository.impl;
+package com.github.yildizmy.repository;
 
 import com.github.yildizmy.repository.NaturalRepository;
 import org.hibernate.NaturalIdLoadAccess;

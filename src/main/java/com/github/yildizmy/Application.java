@@ -1,6 +1,6 @@
 package com.github.yildizmy;
 
-import com.github.yildizmy.repository.impl.NaturalRepositoryImpl;
+import com.github.yildizmy.repository.NaturalRepositoryImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
