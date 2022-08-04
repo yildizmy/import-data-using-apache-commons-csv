@@ -58,11 +58,11 @@ http://localhost:8080/api/v1/employees
 http://localhost:8080/api/v1/employees/:email
 ```
 
-## Help
+## Documentation
+[Apache Commons CSV User Guide](https://commons.apache.org/proper/commons-csv/user-guide.html#Using_an_enum_to_define_a_header)<br/>
+[Hibernate Natural Ids with @NaturalId](https://howtodoinjava.com/hibernate/hibernate-naturalid-example-tutorial/)<br/>
+[The best way to map a @NaturalId business key with JPA and Hibernate](https://vladmihalcea.com/the-best-way-to-map-a-naturalid-business-key-with-jpa-and-hibernate/)
 
-
-
-[Apache Commons CSV User Guide](https://commons.apache.org/proper/commons-csv/user-guide.html#Using_an_enum_to_define_a_header)
 
 
 ## Authors
