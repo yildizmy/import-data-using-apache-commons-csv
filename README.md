@@ -33,7 +33,7 @@ docker-compose -f docker-compose.yml -p "mysql" up
 ```
 <br/>
 
-* Database connection url for DBeaver, etc.
+* Database connection url:
 
 ```
 jdbc:mysql://localhost:3306/employee-db
@@ -45,7 +45,7 @@ jdbc:mysql://localhost:3306/employee-db
 
 * Postman requests:
 
-For file upload request, select form-data in the Body section and use "file" as key parameter
+For file upload request, select form-data in the Body section and use "file" as key parameter.
 ```
 http://localhost:8080/api/v1/employees/upload
 ```
