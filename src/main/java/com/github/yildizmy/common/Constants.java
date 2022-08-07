@@ -2,6 +2,7 @@ package com.github.yildizmy.common;
 
 import java.time.format.DateTimeFormatter;
 
+@SuppressWarnings("java:S1118")
 public class Constants {
 
     public static final String TRACE = "trace";
@@ -9,6 +10,7 @@ public class Constants {
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("M/d/yyyy"); // set as the date field in csv file
 
     // TODO: Move to message.properties file after applying i18n
+    public static final String SUCCESS = "Success";
     public static final String SUCCESSFULLY_UPLOADED="File uploaded successfully: ";
     public static final String SUCCESSFULLY_DELETED="Successfully deleted";
     public static final String VALIDATION_ERROR="Validation error. Check 'errors' field for details";
