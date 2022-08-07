@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.yildizmy</groupId>
-	<artifactId>upload-csv-into-mysql-using-apache-commons-csv</artifactId>
+	<artifactId>import-csv-into-mysql-using-apache-commons-csv</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>upload-csv-into-mysql-using-apache-commons-csv</name>
-	<description>Upload CSV into MySQL using Apache Commons CSV</description>
+	<name>import-csv-into-mysql-using-apache-commons-csv</name>
+	<description>Import CSV into MySQL using Apache Commons CSV</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
