@@ -39,24 +39,19 @@ docker-compose -f docker-compose.yml -p "mysql" up
 jdbc:mysql://localhost:3306/employee-db
 ```
 
-<br/>
 
-### Executing program
+### API Endpoints
 
-* Postman requests:
+All URIs are relative to *http://localhost:8080/api/v1*
 
-For file upload request, select form-data in the Body section and use "file" as key parameter.
-```
-http://localhost:8080/api/v1/employees/upload
-```
+Class | Method                                                    | HTTP request         | Description
+------------ |-----------------------------------------------------------|----------------------| -------------
+*EmployeeController* | [**uploadFile**](http://localhost:8080/api/v1/employees/upload) | **POST** /employees/upload | Upload list of employees file
+*EmployeeController* | [**findByEmail**](http://localhost:8080/api/v1/employees/{email})       | **GET** /employees/{email}    | Get employee by email
+*EmployeeController* | [**findAll**](http://localhost:8080/api/v1/employees)                   | **GET** /employees            | Get all employees
+*EmployeeController* | [**deleteAll**](http://localhost:8080/api/v1/employees)                 | **DELETE** /employees   | Delete all employees
 
-```
-http://localhost:8080/api/v1/employees
-```
 
-```
-http://localhost:8080/api/v1/employees/:email
-```
 
 ## Documentation
 [Apache Commons CSV User Guide](https://commons.apache.org/proper/commons-csv/user-guide.html#Using_an_enum_to_define_a_header)<br/>
