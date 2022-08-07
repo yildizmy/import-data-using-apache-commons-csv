@@ -1,9 +1,11 @@
 # Upload CSV into MySQL using Apache Commons CSV
 Project used for uploading and reading csv file into MySQL database using Apache Commons CSV.
 
+
 ## Description
 
 ...
+
 
 ## Getting Started
 
@@ -15,9 +17,7 @@ Project used for uploading and reading csv file into MySQL database using Apache
 * Apache Commons CSV
 * MySQL Database
 
-
 ### Installing
-
 
 * Run the following command in the project root for creating MySQL database in Docker
 
@@ -39,7 +39,6 @@ docker-compose -f docker-compose.yml -p "mysql" up
 jdbc:mysql://localhost:3306/employee-db
 ```
 
-
 ### API Endpoints
 
 All URIs are relative to *http://localhost:8080/api/v1*
@@ -52,7 +51,6 @@ Class | Method                                                    | HTTP request
 *EmployeeController* | [**deleteAll**](http://localhost:8080/api/v1/employees)                 | **DELETE** /employees   | Delete all employees
 
 
-
 ## Documentation
 [Apache Commons CSV User Guide](https://commons.apache.org/proper/commons-csv/user-guide.html#Using_an_enum_to_define_a_header)<br/>
 [Hibernate ORM 5.6.10.Final User Guide](https://docs.jboss.org/hibernate/orm/5.6/userguide/html_single/Hibernate_User_Guide.html#naturalid)<br/>
@@ -61,9 +59,9 @@ Class | Method                                                    | HTTP request
 [How to Use Hibernate Natural IDs in Spring Boot](https://dzone.com/articles/how-to-use-hibernate-natural-ids-in-spring-boot)
 
 
-
 ## Authors
 Murat Yıldız
+
 
 ## Version History
 
@@ -73,9 +71,11 @@ Murat Yıldız
 * 0.1
     * Initial Release
 
+
 ## License
 
 ...
+
 
 ## Acknowledgments
 ...
