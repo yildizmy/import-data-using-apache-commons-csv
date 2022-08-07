@@ -1,5 +1,5 @@
-# Upload CSV into MySQL using Apache Commons CSV
-Project used for uploading and reading csv file into MySQL database using Apache Commons CSV.
+# Import CSV into MySQL using Apache Commons CSV
+Project used for importing csv file into MySQL database using Apache Commons CSV.
 
 
 ## Description
@@ -45,7 +45,7 @@ All URIs are relative to *http://localhost:8080/api/v1*
 
 Class | Method                                                    | HTTP request         | Description
 ------------ |-----------------------------------------------------------|----------------------| -------------
-*EmployeeController* | [**uploadFile**](http://localhost:8080/api/v1/employees/upload) | **POST** /employees/upload | Upload list of employees file
+*EmployeeController* | [**importFile**](http://localhost:8080/api/v1/employees/import) | **POST** /employees/import | Import list of employees file
 *EmployeeController* | [**findByEmail**](http://localhost:8080/api/v1/employees/{email})       | **GET** /employees/{email}    | Get employee by email
 *EmployeeController* | [**findAll**](http://localhost:8080/api/v1/employees)                   | **GET** /employees            | Get all employees
 *EmployeeController* | [**deleteAll**](http://localhost:8080/api/v1/employees)                 | **DELETE** /employees   | Delete all employees
