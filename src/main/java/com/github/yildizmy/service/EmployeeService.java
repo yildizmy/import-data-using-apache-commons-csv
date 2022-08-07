@@ -36,7 +36,7 @@ public class EmployeeService {
 
     @SneakyThrows
     public void create(MultipartFile file) throws EntityNotFoundException {
-        List<Employee> employees = CsvHelper.csvToEmployees(file.getInputStream()).stream()
+        final List<Employee> employees = CsvHelper.csvToEmployees(file.getInputStream()).stream()
                 .map(EmployeeRequestMapper::mapToEntity)
                 .toList();
         if (employees.isEmpty()) {
