@@ -26,12 +26,12 @@ public class EmployeeController {
     private final Clock clock;
     private final EmployeeService employeeService;
 
-    @PostMapping("/employees/upload")
-    public ResponseEntity<ApiResponse<CommandDto>> uploadFile(
+    @PostMapping("/employees/import")
+    public ResponseEntity<ApiResponse<CommandDto>> importFile(
             @ValidFile @RequestParam("file") MultipartFile file) {
         employeeService.create(file);
         return ResponseEntity
-                .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_UPLOADED));
+                .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_IMPORTED));
     }
 
     @GetMapping("/employees/{email}")

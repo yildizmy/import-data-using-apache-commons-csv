@@ -11,7 +11,7 @@ public class Constants {
 
     // TODO: Move to message.properties file after applying i18n
     public static final String SUCCESS = "Success";
-    public static final String SUCCESSFULLY_UPLOADED="File uploaded successfully: ";
+    public static final String SUCCESSFULLY_IMPORTED="File imported successfully: ";
     public static final String SUCCESSFULLY_DELETED="Successfully deleted";
     public static final String VALIDATION_ERROR="Validation error. Check 'errors' field for details";
     public static final String ENTITY_NOT_FOUND="Item not found";
