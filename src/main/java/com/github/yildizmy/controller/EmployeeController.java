@@ -30,16 +30,16 @@ public class EmployeeController {
         return ResponseEntity.ok(new ResponseMessage(SUCCESSFULLY_UPLOADED + file.getOriginalFilename()));
     }
 
-    @GetMapping("/employees")
-    public ResponseEntity<List<EmployeeDto>> findAll() {
-        final List<EmployeeDto> employees = employeeService.findAll();
-        return ResponseEntity.ok(employees);
-    }
-
     @GetMapping("/employees/{email}")
     public ResponseEntity<EmployeeDto> findByEmail(@PathVariable String email) {
         final EmployeeDto employee = employeeService.findByEmail(email);
         return ResponseEntity.ok(employee);
+    }
+
+    @GetMapping("/employees")
+    public ResponseEntity<List<EmployeeDto>> findAll() {
+        final List<EmployeeDto> employees = employeeService.findAll();
+        return ResponseEntity.ok(employees);
     }
 
     @DeleteMapping("/employees")

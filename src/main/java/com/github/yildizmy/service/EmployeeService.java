@@ -22,16 +22,16 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    public List<EmployeeDto> findAll() {
-        return employeeRepository.findAll().stream()
-                .map(EmployeeDto::new)
-                .toList();
-    }
-
     public EmployeeDto findByEmail(String email) {
         return employeeRepository.findBySimpleNaturalId(email)
                 .map(EmployeeDto::new)
                 .orElseThrow(() -> new EntityNotFoundException(ENTITY_NOT_FOUND));
+    }
+
+    public List<EmployeeDto> findAll() {
+        return employeeRepository.findAll().stream()
+                .map(EmployeeDto::new)
+                .toList();
     }
 
     @SneakyThrows
