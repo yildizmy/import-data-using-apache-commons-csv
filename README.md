@@ -90,5 +90,5 @@ Murat Yıldız
 ...
 
 
-## Acknowledgments
+## Acknowledgements
 ...
