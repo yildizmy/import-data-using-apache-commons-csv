@@ -1,4 +1,4 @@
-# Import CSV into MySQL using Apache Commons CSV
+# Import data into MySQL using Apache Commons CSV
 Project used for importing csv file into MySQL database using Apache Commons CSV.
 
 
