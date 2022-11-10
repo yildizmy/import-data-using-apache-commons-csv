@@ -8,14 +8,14 @@ import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
-public class EmployeeDto {
+public class EmployeeResponse {
     private Long id;
     private String name;
     private String email;
     private String country;
     private LocalDate birthDate;
 
-    public EmployeeDto(Employee employee) {
+    public EmployeeResponse(Employee employee) {
         this.id = employee.getId();
         this.name = employee.getName();
         this.email = employee.getEmail();

@@ -2,7 +2,7 @@ package com.github.yildizmy.controller;
 
 import com.github.yildizmy.dto.response.ApiResponse;
 import com.github.yildizmy.dto.response.CommandResponse;
-import com.github.yildizmy.dto.response.EmployeeDto;
+import com.github.yildizmy.dto.response.EmployeeResponse;
 import com.github.yildizmy.service.EmployeeService;
 import com.github.yildizmy.validator.ValidFile;
 import lombok.RequiredArgsConstructor;
@@ -35,15 +35,15 @@ public class EmployeeController {
     }
 
     @GetMapping("/employees/{email}")
-    public ResponseEntity<ApiResponse<EmployeeDto>> findByEmail(@PathVariable String email) {
-        final EmployeeDto employee = employeeService.findByEmail(email);
+    public ResponseEntity<ApiResponse<EmployeeResponse>> findByEmail(@PathVariable String email) {
+        final EmployeeResponse employee = employeeService.findByEmail(email);
         return ResponseEntity
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, employee));
     }
 
     @GetMapping("/employees")
-    public ResponseEntity<ApiResponse<List<EmployeeDto>>> findAll() {
-        final List<EmployeeDto> employees = employeeService.findAll();
+    public ResponseEntity<ApiResponse<List<EmployeeResponse>>> findAll() {
+        final List<EmployeeResponse> employees = employeeService.findAll();
         return ResponseEntity
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, employees));
     }

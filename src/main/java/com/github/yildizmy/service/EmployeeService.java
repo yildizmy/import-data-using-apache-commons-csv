@@ -1,7 +1,7 @@
 package com.github.yildizmy.service;
 
 import com.github.yildizmy.dto.mapper.EmployeeRequestMapper;
-import com.github.yildizmy.dto.response.EmployeeDto;
+import com.github.yildizmy.dto.response.EmployeeResponse;
 import com.github.yildizmy.exception.EntityNotFoundException;
 import com.github.yildizmy.model.Employee;
 import com.github.yildizmy.repository.EmployeeRepository;
@@ -22,15 +22,15 @@ public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    public EmployeeDto findByEmail(String email) {
+    public EmployeeResponse findByEmail(String email) {
         return employeeRepository.findBySimpleNaturalId(email)
-                .map(EmployeeDto::new)
+                .map(EmployeeResponse::new)
                 .orElseThrow(() -> new EntityNotFoundException(ENTITY_NOT_FOUND));
     }
 
-    public List<EmployeeDto> findAll() {
+    public List<EmployeeResponse> findAll() {
         return employeeRepository.findAll().stream()
-                .map(EmployeeDto::new)
+                .map(EmployeeResponse::new)
                 .toList();
     }
 
