@@ -1,7 +1,7 @@
 package com.github.yildizmy.controller;
 
 import com.github.yildizmy.dto.response.ApiResponse;
-import com.github.yildizmy.dto.response.CommandDto;
+import com.github.yildizmy.dto.response.CommandResponse;
 import com.github.yildizmy.dto.response.EmployeeDto;
 import com.github.yildizmy.service.EmployeeService;
 import com.github.yildizmy.validator.ValidFile;
@@ -27,7 +27,7 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @PostMapping("/employees/import")
-    public ResponseEntity<ApiResponse<CommandDto>> importFile(
+    public ResponseEntity<ApiResponse<CommandResponse>> importFile(
             @ValidFile @RequestParam("file") MultipartFile file) {
         employeeService.create(file);
         return ResponseEntity
@@ -49,7 +49,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employees")
-    public ResponseEntity<ApiResponse<CommandDto>> deleteAll() {
+    public ResponseEntity<ApiResponse<CommandResponse>> deleteAll() {
         employeeService.deleteAll();
         return ResponseEntity
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_DELETED));
