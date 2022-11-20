@@ -17,6 +17,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Objects;
 
 import static com.github.yildizmy.common.Constants.*;
@@ -42,24 +43,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.unprocessableEntity().body(errorResponse);
     }
 
-    /**
-     * Handles javax.persistence.EntityNotFoundException
-     */
-    @ExceptionHandler(javax.persistence.EntityNotFoundException.class)
+    @ExceptionHandler(EntityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleEntityNotFoundException(javax.persistence.EntityNotFoundException ex,
-                                                                WebRequest request) {
-        log.error(ENTITY_NOT_FOUND, ex);
-        return buildErrorResponse(ex, ENTITY_NOT_FOUND, HttpStatus.NOT_FOUND, request);
-    }
-
-    /**
-     * Handles com.github.yildizmy.exception.EntityNotFoundException
-     * Created to encapsulate errors with more detail than javax.persistence.EntityNotFoundException
-     */
-    @ExceptionHandler(com.github.yildizmy.exception.EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ResponseEntity<Object> handleEntityNotFoundException(com.github.yildizmy.exception.EntityNotFoundException ex,
+    public ResponseEntity<Object> handleEntityNotFoundException(EntityNotFoundException ex,
                                                                 WebRequest request) {
         log.error(ENTITY_NOT_FOUND, ex);
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, request);
