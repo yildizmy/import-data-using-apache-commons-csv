@@ -24,7 +24,7 @@ import static com.github.yildizmy.common.Constants.*;
 @Slf4j(topic = "GLOBAL_EXCEPTION_HANDLER")
 @RestControllerAdvice
 @Order(value = Ordered.LOWEST_PRECEDENCE)
-public class DefaultExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @Value("${reflecting.trace:false}")
     private boolean printStackTrace;
