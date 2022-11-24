@@ -28,9 +28,9 @@ public class CsvHelper {
     }
 
     public static List<EmployeeRequest> csvToEmployees(InputStream is) throws IllegalAccessException {
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
-             CSVParser parser = new CSVParser(reader,
-                     CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim())) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+            CSVParser parser = new CSVParser(reader,
+                    CSVFormat.DEFAULT.withFirstRecordAsHeader().withIgnoreHeaderCase().withTrim());
 
             List<EmployeeRequest> employees = new ArrayList<>();
             Iterable<CSVRecord> records = parser.getRecords();
