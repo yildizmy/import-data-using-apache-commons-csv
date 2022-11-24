@@ -27,7 +27,7 @@ import static com.github.yildizmy.common.Constants.*;
 @Order(value = Ordered.LOWEST_PRECEDENCE)
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @Value("${reflecting.trace:false}")
+    @Value("${reflectoring.trace:false}")
     private boolean printStackTrace;
 
     @Override
