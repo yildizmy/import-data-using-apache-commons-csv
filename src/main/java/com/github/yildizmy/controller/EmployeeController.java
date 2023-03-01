@@ -19,14 +19,14 @@ import static com.github.yildizmy.common.Constants.*;
 
 @Validated
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/employees")
 @RequiredArgsConstructor
 public class EmployeeController {
 
     private final Clock clock;
     private final EmployeeService employeeService;
 
-    @PostMapping("/employees/import")
+    @PostMapping("/import")
     public ResponseEntity<ApiResponse<CommandResponse>> importFile(
             @ValidFile @RequestParam("file") MultipartFile file) {
         employeeService.create(file);
@@ -34,21 +34,21 @@ public class EmployeeController {
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_IMPORTED));
     }
 
-    @GetMapping("/employees/{email}")
+    @GetMapping("/{email}")
     public ResponseEntity<ApiResponse<EmployeeResponse>> findByEmail(@PathVariable String email) {
         final EmployeeResponse employee = employeeService.findByEmail(email);
         return ResponseEntity
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, employee));
     }
 
-    @GetMapping("/employees")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<EmployeeResponse>>> findAll() {
         final List<EmployeeResponse> employees = employeeService.findAll();
         return ResponseEntity
                 .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESS, employees));
     }
 
-    @DeleteMapping("/employees")
+    @DeleteMapping
     public ResponseEntity<ApiResponse<CommandResponse>> deleteAll() {
         employeeService.deleteAll();
         return ResponseEntity
