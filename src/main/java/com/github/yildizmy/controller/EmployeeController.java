@@ -15,7 +15,8 @@ import java.time.Clock;
 import java.time.Instant;
 import java.util.List;
 
-import static com.github.yildizmy.common.Constants.*;
+import static com.github.yildizmy.common.Constants.SUCCESS;
+import static com.github.yildizmy.common.Constants.SUCCESSFULLY_IMPORTED;
 
 @Validated
 @RestController
@@ -52,6 +53,8 @@ public class EmployeeController {
     @DeleteMapping
     public ResponseEntity<ApiResponse<Void>> deleteAll() {
         employeeService.deleteAll();
-        return ResponseEntity.ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_DELETED));
+        return ResponseEntity
+                .status(HttpStatus.NO_CONTENT)
+                .build();
     }
 }
