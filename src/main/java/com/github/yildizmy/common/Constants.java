@@ -2,15 +2,15 @@ package com.github.yildizmy.common;
 
 import java.time.format.DateTimeFormatter;
 
-@SuppressWarnings("java:S1118")
-public class Constants {
+public final class Constants {
+
+    private Constants() {}
 
     public static final String TRACE = "trace";
     public static final String[] SUPPORTED_CONTENT_TYPES =  {"text/csv", "application/vnd.ms-excel"};
     // set format for reading/writing from/to CSV (same date format as in the file)
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("M/d/yyyy");
 
-    // TODO: Move to message.properties file after applying i18n
     public static final String SUCCESS = "Success";
     public static final String SUCCESSFULLY_IMPORTED="File imported successfully: ";
     public static final String SUCCESSFULLY_DELETED="Successfully deleted";
