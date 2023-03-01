@@ -1,11 +1,11 @@
 package com.github.yildizmy.controller;
 
 import com.github.yildizmy.dto.response.ApiResponse;
-import com.github.yildizmy.dto.response.CommandResponse;
 import com.github.yildizmy.dto.response.EmployeeResponse;
 import com.github.yildizmy.service.EmployeeService;
 import com.github.yildizmy.validator.ValidFile;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +27,12 @@ public class EmployeeController {
     private final EmployeeService employeeService;
 
     @PostMapping("/import")
-    public ResponseEntity<ApiResponse<CommandResponse>> importFile(
+    public ResponseEntity<ApiResponse<Void>> importFile(
             @ValidFile @RequestParam("file") MultipartFile file) {
         employeeService.create(file);
         return ResponseEntity
-                .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_IMPORTED));
+                .status(HttpStatus.CREATED)
+                .body(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_IMPORTED));
     }
 
     @GetMapping("/{email}")
@@ -49,9 +50,8 @@ public class EmployeeController {
     }
 
     @DeleteMapping
-    public ResponseEntity<ApiResponse<CommandResponse>> deleteAll() {
+    public ResponseEntity<ApiResponse<Void>> deleteAll() {
         employeeService.deleteAll();
-        return ResponseEntity
-                .ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_DELETED));
+        return ResponseEntity.ok(new ApiResponse<>(Instant.now(clock).toEpochMilli(), SUCCESSFULLY_DELETED));
     }
 }
