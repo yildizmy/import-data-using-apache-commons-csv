@@ -4,7 +4,9 @@ import java.time.format.DateTimeFormatter;
 
 public final class Constants {
 
-    private Constants() {}
+    private Constants() {
+        throw new UnsupportedOperationException(CLASS_CANNOT_BE_INSTANTIATED);
+    }
 
     public static final String TRACE = "trace";
     public static final String[] SUPPORTED_CONTENT_TYPES =  {"text/csv", "application/vnd.ms-excel"};
@@ -12,6 +14,7 @@ public final class Constants {
     public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("M/d/yyyy");
 
     public static final String SUCCESS = "Success";
+    public static final String CLASS_CANNOT_BE_INSTANTIATED = "This is a utility class and cannot be instantiated";
     public static final String SUCCESSFULLY_IMPORTED="File imported successfully: ";
     public static final String SUCCESSFULLY_DELETED="Successfully deleted";
     public static final String VALIDATION_ERROR="Validation error. Check 'errors' field for details";
