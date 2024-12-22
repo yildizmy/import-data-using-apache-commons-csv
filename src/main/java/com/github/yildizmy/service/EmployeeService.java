@@ -2,7 +2,7 @@ package com.github.yildizmy.service;
 
 import com.github.yildizmy.dto.mapper.EmployeeRequestMapper;
 import com.github.yildizmy.dto.response.EmployeeResponse;
-import com.github.yildizmy.model.Employee;
+import com.github.yildizmy.domain.Employee;
 import com.github.yildizmy.repository.EmployeeRepository;
 import com.github.yildizmy.util.CsvHelper;
 import lombok.RequiredArgsConstructor;

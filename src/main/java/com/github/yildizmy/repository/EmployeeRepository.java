@@ -1,6 +1,6 @@
 package com.github.yildizmy.repository;
 
-import com.github.yildizmy.model.Employee;
+import com.github.yildizmy.domain.Employee;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

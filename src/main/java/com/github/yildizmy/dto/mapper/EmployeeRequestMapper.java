@@ -1,7 +1,7 @@
 package com.github.yildizmy.dto.mapper;
 
 import com.github.yildizmy.dto.request.EmployeeRequest;
-import com.github.yildizmy.model.Employee;
+import com.github.yildizmy.domain.Employee;
 
 public class EmployeeRequestMapper {
 
